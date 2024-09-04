@@ -66,11 +66,20 @@ The script outputs the following data for each stock:
 - **Total Stock Volume:** The sum of the trading volume for the quarter.
 - **Greatest Metrics:** Identifies stocks with the greatest percentage increase, decrease, and total volume.
  
-![Excel worksheet displaying the results after running the StockInfo VBA script. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, volumes, quarterly changes, percentage changes, and total stock volumes. Positive percentage changes are highlighted in green, and negative changes in red. The right side of the sheet shows the ticker symbols for the stocks with the greatest percentage increase, decrease, and total volume, along with their respective values](/screenshots/StockInfoOutput.png)
-*Figure 1: Excel worksheet displaying the results after running the `StockInfo` VBA script.* 
+![Excel worksheet displaying the results after running the StockInfo VBA script. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, volumes, quarterly changes, percentage changes, and total stock volumes. Positive percentage changes are highlighted in green, and negative changes in red. The right side of the sheet shows the ticker symbols for the stocks with the greatest percentage increase, decrease, and total volume, along with their respective values](/screenshots/StockInfoQ1.png)
+*Figure 1: Excel worksheet displaying the results for Q1 after running the `StockInfo` VBA script.* 
+
+![Excel worksheet displaying the results after running the StockInfo VBA script. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, volumes, quarterly changes, percentage changes, and total stock volumes. Positive percentage changes are highlighted in green, and negative changes in red. The right side of the sheet shows the ticker symbols for the stocks with the greatest percentage increase, decrease, and total volume, along with their respective values](/screenshots/StockInfoQ2.png)
+*Figure 2: Excel worksheet displaying the results for Q2 after running the `StockInfo` VBA script.* 
+
+![Excel worksheet displaying the results after running the StockInfo VBA script. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, volumes, quarterly changes, percentage changes, and total stock volumes. Positive percentage changes are highlighted in green, and negative changes in red. The right side of the sheet shows the ticker symbols for the stocks with the greatest percentage increase, decrease, and total volume, along with their respective values](/screenshots/StockInfoQ3.png) 
+*Figure 3: Excel worksheet displaying the results for Q3 after running the `StockInfo` VBA script.* 
+
+![Excel worksheet displaying the results after running the StockInfo VBA script. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, volumes, quarterly changes, percentage changes, and total stock volumes. Positive percentage changes are highlighted in green, and negative changes in red. The right side of the sheet shows the ticker symbols for the stocks with the greatest percentage increase, decrease, and total volume, along with their respective values](/screenshots/StockInfoQ4.png)
+*Figure 4: Excel worksheet displaying the results for Q2 after running the `StockInfo` VBA script.* 
 
 ![Excel worksheet displaying raw stock market data. The sheet includes columns for stock tickers, dates, opening prices, high and low prices, closing prices, and volumes. The data is unformatted, showing the clean state of the worksheet before further analysis. This is the expected format for data before running the StockInfo VBA script for analysis and conditional formatting. Data can be brought back to this form after using the StockInfo script by using the ClearAllFormatting script.](/screenshots/StockInfoInput.png)
-*Figure 2: Excel worksheet displaying the proper data format and the results of the `ClearAllFormatting` VBA script.*
+*Figure 5: Excel worksheet displaying the proper data format and the results of the `ClearAllFormatting` VBA script.*
 
 ## Possible Future Improvements
 
