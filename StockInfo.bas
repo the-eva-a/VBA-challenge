@@ -18,6 +18,13 @@ Sub StockInfo()
     Dim stockVolume As Double
     Dim stockIndex As Long
     Dim totalVolume As Double
+    Dim maxInc As Double
+    Dim maxIncTicker As String
+    Dim maxDec As Double
+    Dim maxDecTicker As String
+    Dim maxVolume As Double
+    Dim maxVolumeTicker As String
+    
 
     ' Loop through each worksheet in the workbook
     For Each ws In ThisWorkbook.Worksheets
@@ -26,6 +33,13 @@ Sub StockInfo()
         ws.Cells(1, 10).Value = "Quarterly Change"
         ws.Cells(1, 11).Value = "Percent Change"
         ws.Cells(1, 12).Value = "Total Stock Volume"
+        
+        ws.Cells(2, 15).Value = "Greatest % Increase"
+        ws.Cells(3, 15).Value = "Greatest % Decrease"
+        ws.Cells(4, 15).Value = "Greatest Volume"
+        
+        ws.Cells(1, 16).Value = "Ticker"
+        ws.Cells(1, 17).Value = "Value"
         
         ' Step 2: Initialize the first ticker and starting value
         ticker = ws.Cells(2, 1).Value
@@ -50,6 +64,19 @@ Sub StockInfo()
                 quarterlyChange = startingValue - endingValue
                 percentChange = quarterlyChange / endingValue
                 
+                ' Compare volume and change values
+                If percentChange > maxInc Then
+                    maxInc = percentChange
+                    maxIncTicker = prevTicker
+                ElseIf percentChange < maxDec Then
+                    maxDec = percentChange
+                    maxDecTicker = prevTicker
+                End If
+                
+                If totalVolume > maxVolume Then
+                    maxVolume = totalVolume
+                    maxVolumeTicker = prevTicker
+                End If
                 ' Step 5: Print the summary for the previous ticker
                 ws.Cells(stockIndex, 9).Value = prevTicker
                 ws.Cells(stockIndex, 10).Value = quarterlyChange
@@ -71,7 +98,17 @@ Sub StockInfo()
             i = i + 1
         Wend
         
-        ' Step 7: Conditional Formatting
+        ' Step 7: Report Changes
+        ws.Cells(2, 16).Value = maxIncTicker
+        ws.Cells(2, 17).Value = maxInc
+        
+        ws.Cells(3, 16).Value = maxDecTicker
+        ws.Cells(3, 17).Value = maxDec
+        
+        ws.Cells(4, 16).Value = maxVolumeTicker
+        ws.Cells(4, 17).Value = maxVolume
+        
+        ' Step 8: Conditional Formatting
         For k = 2 To stockIndex
             ' Set losses to Red
             If ws.Cells(k, 11).Value < 0 Then
@@ -82,9 +119,11 @@ Sub StockInfo()
             End If
         Next k
         
-        ' Step 8: Number Formatting
-        Range("K:K").NumberFormat = "0.00%"
-        Range("Q2:Q3").NumberFormat = "0.00%"
+      
+        ' Step 9: Number Formatting
+        ws.Range("K:K").NumberFormat = "0.00%"
+        ws.Range("Q2:Q3").NumberFormat = "0.00%"
+        ws.Range("P2:Q3").NumberFormat = "0.00%"
             
     Next ws
 End Sub
